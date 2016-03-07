@@ -1,0 +1,110 @@
+
+CREATE DATABASE IF NOT EXISTS mtabigdata;
+use mtabigdata;
+
+
+drop table if exists cdnow_tbl;
+CREATE external TABLE cdnow_tbl
+(
+clientid    string , 
+purchase_dt date , 
+cd_bought   int , 
+usd_amnt    float 
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+location '/mta_bigdata/'
+;
+
+
+drop table if exists cdnow_scored;
+create table cdnow_scored 
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE
+as
+
+select clientid,
+lastpurchase_dt,
+recency_score,
+frequancy_score,
+monetary_score
+from 
+(
+select '1' as dummy,
+sub.clientid as clientid , 
+sub.last_purchase_dt as lastpurchase_dt, 
+case when sub.recency_score<0 then 0 else recency_score end as recency_score, 
+sub.frequancy_score as frequancy_score, 
+sub.monetary_score as monetary_score
+from (
+select clientid, 
+max(purchase_dt) as last_purchase_dt, 
+10 - int((UNIX_TIMESTAMP('1998-07-01 00:00:00')-UNIX_TIMESTAMP(max(purchase_dt)))/(30*86400)) as recency_score, 
+sum(case when purchase_dt <'1997-09-01' then 0 else 1 end) as frequancy_score ,
+sum(case when purchase_dt <'1997-09-01' then 0 else usd_amnt end) as monetary_score
+from cdnow_tbl
+where purchase_dt >='1997-09-01'
+group by clientid
+) as sub
+) as sub2
+
+;
+
+
+drop table if exists cdnow_user_final;
+create table cdnow_user_final 
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE
+as
+select clientid,
+CASE WHEN recency_score > a.recency_score_75th_percentile THEN 5 ELSE 
+CASE WHEN recency_score > a.recency_score_50th_percentile THEN 4 ELSE 
+CASE WHEN recency_score > a.recency_score_25th_percentile THEN 3 ELSE 
+CASE WHEN recency_score > a.recency_score_50th_percentile THEN 2 ELSE 
+1 
+END
+END 
+END  
+END as recency_final_score,
+
+CASE WHEN frequancy_score > a.frequancy_score_75th_percentile THEN 5 ELSE 
+CASE WHEN frequancy_score > a.frequancy_score_50th_percentile THEN 4 ELSE 
+CASE WHEN frequancy_score > a.frequancy_score_25th_percentile THEN 3 ELSE 
+CASE WHEN frequancy_score > a.frequancy_score_50th_percentile THEN 2 ELSE 
+1 
+END
+END 
+END  
+END as frequancy_final_score,
+
+CASE WHEN monetary_score > a.monetary_score_75th_percentile THEN 5 ELSE 
+CASE WHEN monetary_score > a.monetary_score_50th_percentile THEN 4 ELSE 
+CASE WHEN monetary_score > a.monetary_score_25th_percentile THEN 3 ELSE 
+CASE WHEN monetary_score > a.monetary_score_50th_percentile THEN 2 ELSE 
+1 
+END
+END 
+END  
+END as monetary_final_score
+from cdnow_scored
+
+cross join (
+select percentile_approx(monetary_score, 0.75) as monetary_score_75th_percentile,
+percentile_approx(monetary_score, 0.5) as monetary_score_50th_percentile,
+percentile_approx(monetary_score, 0.25) as monetary_score_25th_percentile,
+percentile_approx(frequancy_score, 0.75)as frequancy_score_75th_percentile,
+percentile_approx(frequancy_score, 0.5) as frequancy_score_50th_percentile,
+percentile_approx(frequancy_score, 0.25) as frequancy_score_25th_percentile,
+percentile_approx(recency_score, 0.75) as recency_score_75th_percentile,
+percentile_approx(recency_score, 0.5) as recency_score_50th_percentile,
+percentile_approx(recency_score, 0.25) as recency_score_25th_percentile
+
+from cdnow_scored
+) a;
+
+quit;
