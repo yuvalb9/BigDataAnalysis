@@ -40,7 +40,7 @@ code repository for the final exercise in MTA's Big Data Analysis course
 ```
 - histograms of revenue per month: 
 ```
-Year    Month    # purchases
+Year    Month    sum of revenue
 1997    1       299060.17
 1997    2       379590.03
 1997    3       393155.27
