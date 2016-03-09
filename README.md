@@ -65,6 +65,8 @@ we need to cut off after March 1997, this allows us to cut all data from 10 mont
 
 - The following are the amount of users per RFM score (calculated as R+F+M=score).
 ![alt text][RFMSCore]
+- Analyzing the the graph shows that 40% of consumers have a RFM score of 12 or more, while only 20%-40% have a RFM score of 5 to 8. This means that for the 20%-40% of consumer with the RFM score of 6-11, we can try and engage to increase the TPV from them.
+
 
 
 
