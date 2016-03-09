@@ -72,10 +72,10 @@ we need to cut off after March 1997, this allows us to cut all data from 10 mont
 
 
    [RFMSCore]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/num.of.users.vs.RFM.Score.png "# of users vs. RMF score"
-   [CDNOW_master.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/CDNOW_master.txt>
-   [CDNOW_master_fixed.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/CDNOW_master_fixed.txt>
-   [CDNOW_master_final.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/CDNOW_master_final.txt> 
-   [clustering_centers.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/clustering_centers.txt> 
-   [hive_script]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/hive_script> 
-   [pyspark_clustering.py]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/pyspark_clustering.py>
-   [run_analysis.sh]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/run_analysis.sh> 
+   [CDNOW_master.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master.txt>
+   [CDNOW_master_fixed.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_fixed.txt>
+   [CDNOW_master_final.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_final.txt> 
+   [clustering_centers.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/clustering_centers.txt> 
+   [hive_script]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/hive_script> 
+   [pyspark_clustering.py]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/pyspark_clustering.py>
+   [run_analysis.sh]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/run_analysis.sh> 
