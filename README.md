@@ -65,14 +65,21 @@ Year    Month    sum of revenue
 we need to cut off after March 1997, this allows us to cut all data from 10 months ago, to simplify the recency measure.
 
 - The following are the amount of users per RFM score (calculated as R+F+M=score).
-![alt text][RFMSCore]
+![alt text][RFMScore]
 - Analyzing the the graph shows that 40% of consumers have a RFM score of 12 or more, while only 20%-40% have a RFM score of 5 to 8. This means that for the 20%-40% of consumer with the RFM score of 6-11, we can try and engage to increase the TPV from them.
 
+- The following are the amount of users per RFM score (calculated as R+F+M=score), split by cluster id.
+![alt text][RFMScoreCluster]
+- Analyzing the the graph shows that:
+  - Cluster #2 is of the top consumers.
+  - Cluster #3 is of the least valuable consumers.
+  - Cluster #1 and #4 are the median consumers - while cluster #1 might be of users more relavant to enagage.
 
 
 
 
-   [RFMSCore]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/num.of.users.vs.RFM.Score.png "# of users vs. RMF score"
+   [RFMScoreCluster]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/num.of.users.vs.RFM.Score.by.assigned.cluster.png "# of users vs. RMF score by cluster id"
+   [RFMScore]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/num.of.users.vs.RFM.Score.png "# of users vs. RMF score"
    [CDNOW_master.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master.txt>
    [CDNOW_master_fixed.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_fixed.txt>
    [CDNOW_master_final.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_final.txt> 
