@@ -78,8 +78,8 @@ we need to cut off after March 1997, this allows us to cut all data from 10 mont
 
 
 
-   [RFMScoreCluster]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/num.of.users.vs.RFM.Score.by.assigned.cluster.png "# of users vs. RMF score by cluster id"
-   [RFMScore]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/num.of.users.vs.RFM.Score.png "# of users vs. RMF score"
+   [RFMScoreCluster]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/images/num.of.users.vs.RFM.Score.by.assigned.cluster.png "# of users vs. RMF score by cluster id"
+   [RFMScore]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/images/num.of.users.vs.RFM.Score.png "# of users vs. RMF score"
    [CDNOW_master.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master.txt>
    [CDNOW_master_fixed.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_fixed.txt>
    [CDNOW_master_final.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_final.txt> 
