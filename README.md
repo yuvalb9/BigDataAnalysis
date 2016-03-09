@@ -63,12 +63,13 @@ Year    Month    sum of revenue
 
 we need to cut off after March 1997, this allows us to cut all data from 10 months ago, to simplify the recency measure.
 
+- The following are the amount of users per RFM score (calculated as R+F+M=score).
+![alt text][RFMSCore]
 
 
 
 
-
-
+   [RFMSCore]: https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/num.of.users.vs.RFM.Score.png "# of users vs. RMF score"
    [CDNOW_master.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/CDNOW_master.txt>
    [CDNOW_master_fixed.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/CDNOW_master_fixed.txt>
    [CDNOW_master_final.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/blob/master/CDNOW_master_final.txt> 
