@@ -5,6 +5,7 @@ code repository for the final exercise in MTA's Big Data Analysis course
 - [CDNOW_master.txt] - The original data file for this task
 - [CDNOW_master_fixed.txt] - The original file, with the date column format changed from yyyymmdd to yyyy-mm-dd to allow simpler import to Hive.
 - [CDNOW_master_final.txt] - The RFM scored file.
+- [CDNOW_master_final_clustered.txt] - the RFM scored file, with the clustering from the centers given in clustering_centers.txt.
 - [clustering_centers.txt] - The centers of the KMeans (k=4) run on the scored RFM data.
 - [hive_script] - The script run by Hive to calculate the score of the RFM data.
 - [pyspark_clustering.py] - The script run by spark-submit, running the KMeans (k=4) algorithm on the RFM scored file.
@@ -75,6 +76,7 @@ we need to cut off after March 1997, this allows us to cut all data from 10 mont
    [CDNOW_master.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master.txt>
    [CDNOW_master_fixed.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_fixed.txt>
    [CDNOW_master_final.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_final.txt> 
+   [CDNOW_master_final_clustered.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/CDNOW_master_final_clustered.txt> 
    [clustering_centers.txt]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/clustering_centers.txt> 
    [hive_script]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/hive_script> 
    [pyspark_clustering.py]: <https://raw.githubusercontent.com/yuvalb9/BigDataAnalysis/master/pyspark_clustering.py>
