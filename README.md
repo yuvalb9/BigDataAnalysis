@@ -62,18 +62,19 @@ Year    Month    sum of revenue
 1998    6        76109.29
 ```
 
-we need to cut off after March 1997, this allows us to cut all data from 10 months ago, to simplify the recency measure.
+we need to cut off after May 1997, this allows us to cut all data from 10 months ago, to simplify the recency measure.
 
 - The following are the amount of users per RFM score (calculated as R+F+M=score).
 ![alt text][RFMScore]
-- Analyzing the the graph shows that 40% of consumers have a RFM score of 12 or more, while only 20%-40% have a RFM score of 5 to 8. This means that for the 20%-40% of consumer with the RFM score of 6-11, we can try and engage to increase the TPV from them.
+- Analyzing the graph shows that the amount of users in the 10th and 6th score are the relative majority. 
+
 
 - The following are the amount of users per RFM score (calculated as R+F+M=score), split by cluster id.
 ![alt text][RFMScoreCluster]
 - Analyzing the the graph shows that:
-  - Cluster #2 is of the top consumers.
-  - Cluster #3 is of the least valuable consumers.
-  - Cluster #1 and #4 are the median consumers - while cluster #1 might be of users more relavant to enagage.
+  - Cluster #3 is of the top consumers.
+  - Cluster #1 is of the least valuable consumers.
+  - Cluster #2 and #4 are the median consumers - while cluster #4 might be of users more relavant to enagage.
 
 
 
