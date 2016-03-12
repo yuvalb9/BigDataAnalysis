@@ -9,4 +9,8 @@ hadoop fs -chmod 777 /mta_bigdata/CDNOW_master.txt  /mta_bigdata/
 hive < hive_script
 
 hive -e 'select * from mtabigdata.cdnow_user_final;' >  CDNOW_master_final.txt
+hive -e 'select * from mtabigdata.cdnow_filtered' > CDNOW_master_filtered.txt
+hive -e 'select * from mtabigdata.cdnow_scored' > CDNOW_scored.txt
+
+
 spark-submit pyspark_clustering.py > clustering_centers.txt
